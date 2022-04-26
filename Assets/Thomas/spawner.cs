@@ -11,6 +11,7 @@ public class spawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(spawncourou());
+        StartCoroutine(spawncourou2());
     }
 
     // Update is called once per frame
@@ -23,5 +24,11 @@ public class spawner : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(2, 5));
         GameObject newBullet= Instantiate(bullet,transform.position,transform.rotation);
         StartCoroutine(spawncourou());
+    }
+    public IEnumerator spawncourou2()
+    {
+        yield return new WaitForSeconds(Random.Range(5, 10));
+        GameObject newBullet = Instantiate(bullet,spawnPoint2.position, transform.rotation);
+        StartCoroutine(spawncourou2());
     }
 }

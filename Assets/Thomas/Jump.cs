@@ -7,6 +7,7 @@ public class Jump : MonoBehaviour
     public Rigidbody2D rb;
     public int jumpforce;
     public bool jump;
+    public bool down;
     private void Start()
     {
         rb=GetComponent<Rigidbody2D>();
@@ -19,7 +20,11 @@ public class Jump : MonoBehaviour
             rb.AddForce(Vector2.up * jumpforce);
             jump = false;
         }
-            
+        if (down)
+        {
+            rb.AddForce(Vector2.up * -(jumpforce*2));
+            down = false;
+        }  
         
     }
 }
