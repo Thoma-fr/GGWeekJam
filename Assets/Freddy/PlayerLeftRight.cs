@@ -8,6 +8,10 @@ public class PlayerLeftRight : MonoBehaviour
     public Rigidbody2D leftArmRb;
     public Rigidbody2D rightArmRb;
 
+    public List<GameObject> soldiersList;
+    public List<GameObject> soldiersList2;
+    public List<GameObject> soldiersList3;
+
     public Vector2 punchPower;
 
     public float speedPlayer = 2f;
@@ -31,7 +35,7 @@ public class PlayerLeftRight : MonoBehaviour
     private IEnumerator ReloadHit()
     {
         canHit = false;
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         canHit = true;
     }
 
