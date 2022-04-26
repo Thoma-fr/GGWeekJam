@@ -17,12 +17,13 @@ public class Jump : MonoBehaviour
     }
     private void Update()
     {
-        if (jump)
+        if (jump || Input.GetKeyDown(KeyCode.UpArrow))
         {
             rb.AddForce(Vector2.up * jumpforce);
             jump = false;
+
         }
-        if (down)
+        if (down || Input.GetKeyDown(KeyCode.DownArrow))
         {
             rb.AddForce(Vector2.up * -(jumpforce*2));
             down = false;
@@ -34,9 +35,16 @@ public class Jump : MonoBehaviour
         life--;
         switch (life)
         {
-            case 2: Destroy(hearth1 ); break;
-                case 1: Destroy(hearth2 ); break;
-            case 0: Destroy(hearth3 ); break;
+            case 2:
+                hearth1.GetComponent<Animator>().SetTrigger("Death");
+                Destroy(hearth1,3f); 
+                break;
+                case 1:
+                hearth2.GetComponent<Animator>().SetTrigger("Death");
+                Destroy(hearth2,3f) ; break;
+            case 0:
+                hearth3.GetComponent<Animator>().SetTrigger("Death");
+                Destroy(hearth3,3f ); break;
             default:
                 break;
         }
