@@ -8,6 +8,8 @@ public class Jump : MonoBehaviour
     public int jumpforce;
     public bool jump;
     public bool down;
+    public int life = 3;
+    public GameObject hearth1, hearth2, hearth3;
     private void Start()
     {
         rb=GetComponent<Rigidbody2D>();
@@ -26,5 +28,17 @@ public class Jump : MonoBehaviour
             down = false;
         }  
         
+    }
+    public void takeDamage()
+    {
+        life--;
+        switch (life)
+        {
+            case 2: Destroy(hearth1 ); break;
+                case 1: Destroy(hearth2 ); break;
+            case 0: Destroy(hearth3 ); break;
+            default:
+                break;
+        }
     }
 }
