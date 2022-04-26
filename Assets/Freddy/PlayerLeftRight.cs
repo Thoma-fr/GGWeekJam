@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,16 +12,27 @@ public class PlayerLeftRight : MonoBehaviour
 
     public float speedPlayer = 2f;
 
+    public static bool canCollide = false;
+    private bool canHit = true;
 
     // Update is called once per frame
     void Update()
     {
         Move();
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && canHit)
         {
+            canCollide = true;
             leftArmRb.AddForce(punchPower, ForceMode2D.Impulse);
             rightArmRb.AddForce(punchPower, ForceMode2D.Impulse);
+            StartCoroutine(ReloadHit());
         }
+    }
+
+    private IEnumerator ReloadHit()
+    {
+        canHit = false;
+        yield return new WaitForSeconds(2f);
+        canHit = true;
     }
 
     private void Move()

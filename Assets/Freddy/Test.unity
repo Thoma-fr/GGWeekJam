@@ -303,7 +303,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.16981131, g: 0.037646845, b: 0.037646845, a: 1}
   m_FlipX: 0
@@ -329,8 +329,8 @@ HingeJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0.0210163, y: -0.5537628}
-  m_ConnectedAnchor: {x: 0.00000027847796, y: -0.50000054}
+  m_Anchor: {x: 0.04386049, y: -0.33218494}
+  m_ConnectedAnchor: {x: 0.6511344, y: -0.4338985}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -352,7 +352,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.3186749}
+  m_Offset: {x: 0, y: 0.38723958}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -363,7 +363,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.36265022}
+  m_Size: {x: 1, y: 0.22552088}
   m_EdgeRadius: 0
 --- !u!1 &533214106
 GameObject:
@@ -541,7 +541,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.3436085}
+  m_Offset: {x: 0, y: 0.40013525}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -552,7 +552,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.31278297}
+  m_Size: {x: 1, y: 0.1997295}
   m_EdgeRadius: 0
 --- !u!1 &797007932
 GameObject:
@@ -1033,7 +1033,6 @@ MonoBehaviour:
   startLineSpawn: {fileID: 533214107}
   endLineSpawn: {fileID: 797007933}
   spawnRock: {fileID: 7265711741380481925, guid: 96914ef1b643f0544b315cccba5684f2, type: 3}
-  punchPower: 5
 --- !u!4 &1984968866
 Transform:
   m_ObjectHideFlags: 0
