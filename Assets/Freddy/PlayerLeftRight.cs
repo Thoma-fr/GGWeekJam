@@ -7,17 +7,19 @@ public class PlayerLeftRight : MonoBehaviour
     public Rigidbody2D leftArmRb;
     public Rigidbody2D rightArmRb;
 
-    public float punchPower = 5f;
+    public Vector2 punchPower;
 
     public float speedPlayer = 2f;
+
+
     // Update is called once per frame
     void Update()
     {
         Move();
         if (Input.GetKeyDown(KeyCode.E))
         {
-            leftArmRb.AddForce(new Vector2(punchPower, punchPower), ForceMode2D.Impulse);
-            Debug.Log(leftArmRb.velocity);
+            leftArmRb.AddForce(punchPower, ForceMode2D.Impulse);
+            rightArmRb.AddForce(punchPower, ForceMode2D.Impulse);
         }
     }
 
@@ -33,4 +35,5 @@ public class PlayerLeftRight : MonoBehaviour
             transform.position = new Vector3(transform.position.x + speedPlayer * 0.01f, transform.position.y, 0);
         }
     }
+
 }
