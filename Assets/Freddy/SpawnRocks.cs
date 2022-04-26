@@ -10,7 +10,6 @@ public class SpawnRocks : MonoBehaviour
     public GameObject spawnRock;
     private GameObject cloneRock;
 
-    public float punchPower;
     private void Start()
     {
         SpawnRockAtPosition();
@@ -32,16 +31,8 @@ public class SpawnRocks : MonoBehaviour
 
     private IEnumerator ShotRate(float rate)
     {
+        PlayerLeftRight.canCollide = false;
         yield return new WaitForSeconds(rate);
         SpawnRockAtPosition();
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Arm"))
-        {
-            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.right * punchPower;
-            Debug.Log(gameObject);
-        }
     }
 }
