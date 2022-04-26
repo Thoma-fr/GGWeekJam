@@ -130,10 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1543357274239072990, guid: cbbdc7c5fbb5c334f95a5646855c79de, type: 3}
-      propertyPath: m_AngleLimits.m_UpperAngle
-      value: 161.27423
-      objectReference: {fileID: 0}
     - target: {fileID: 1864622732849052972, guid: cbbdc7c5fbb5c334f95a5646855c79de, type: 3}
       propertyPath: m_Name
       value: player
@@ -144,11 +140,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3144930139393137709, guid: cbbdc7c5fbb5c334f95a5646855c79de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.27
+      value: 3.69
       objectReference: {fileID: 0}
     - target: {fileID: 3144930139393137709, guid: cbbdc7c5fbb5c334f95a5646855c79de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.15851283
+      value: -2.27
       objectReference: {fileID: 0}
     - target: {fileID: 3144930139393137709, guid: cbbdc7c5fbb5c334f95a5646855c79de, type: 3}
       propertyPath: m_LocalPosition.z
