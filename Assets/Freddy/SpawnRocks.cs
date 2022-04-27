@@ -21,7 +21,7 @@ public class SpawnRocks : MonoBehaviour
         Gizmos.DrawLine(startLineSpawn.position, endLineSpawn.position);
     }
 
-    private void SpawnRockAtPosition()
+    public void SpawnRockAtPosition()
     {
         Vector2 randomPos = new Vector2(Random.Range(startLineSpawn.position.x, endLineSpawn.position.x), startLineSpawn.position.y);
         cloneRock = Instantiate(spawnRock, randomPos, Quaternion.identity);
