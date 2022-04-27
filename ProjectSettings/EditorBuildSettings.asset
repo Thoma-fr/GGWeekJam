@@ -8,4 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Thomas/cinematic/cinematicminigame1.unity
+    guid: 13d82b5809c79a74ebf113f5e6c8428e
+  - enabled: 1
+    path: Assets/Thomas/MiniGameAct1 1.unity
+    guid: 817718e195f2a0541a4ce11f88f4aeb2
+  - enabled: 1
+    path: Assets/Thomas/Meduse.unity
+    guid: b32e44ece2f876f4890c92ef7f9d98d4
+  - enabled: 1
+    path: Assets/Scenes/course.unity
+    guid: c5309d23969449e4b9284919d42c5247
+  - enabled: 1
+    path: Assets/Thomas/cinematic/CinematiqueCourse.unity
+    guid: a5f4aa491cca4894bb399836721153a1
   m_configObjects: {}
