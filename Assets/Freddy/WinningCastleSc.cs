@@ -6,6 +6,8 @@ public class WinningCastleSc : MonoBehaviour
 {
     private List<GameObject> castlePiece = new List<GameObject>();
 
+    public GameObject winningTrigger;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,8 @@ public class WinningCastleSc : MonoBehaviour
             {
                 castlePiece[0].GetComponent<Rigidbody2D>().velocity = Vector2.right * 3.0f;
                 castlePiece.Remove(castlePiece[0]);
+                RockBehaviour.canBeHurt = false;
+                winningTrigger.GetComponent<Collider2D>().isTrigger = true;
             }
         }
     }
