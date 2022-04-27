@@ -37,7 +37,7 @@ public class RockBehaviour : MonoBehaviour
                 }
                 GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList.Clear();
 
-                GameObject.FindObjectOfType<PlayerLeftRight>().heartsList[2].SetActive(false);
+                GameObject.FindObjectOfType<PlayerLeftRight>().heartsList[2].GetComponent<Animator>().SetTrigger("Death");
                 GameObject.FindObjectOfType<PlayerLeftRight>().heartsList.RemoveAt(2);
 
             }
@@ -50,7 +50,7 @@ public class RockBehaviour : MonoBehaviour
                 }
                 GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList2.Clear();
 
-                GameObject.FindObjectOfType<PlayerLeftRight>().heartsList[1].SetActive(false);
+                GameObject.FindObjectOfType<PlayerLeftRight>().heartsList[1].GetComponent<Animator>().SetTrigger("Death");
                 GameObject.FindObjectOfType<PlayerLeftRight>().heartsList.RemoveAt(1);
 
             }
@@ -63,7 +63,7 @@ public class RockBehaviour : MonoBehaviour
                 }
                 GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList3.Clear();
 
-                GameObject.FindObjectOfType<PlayerLeftRight>().heartsList[0].SetActive(false);
+                GameObject.FindObjectOfType<PlayerLeftRight>().heartsList[0].GetComponent<Animator>().SetTrigger("Death");
                 GameObject.FindObjectOfType<PlayerLeftRight>().heartsList.Clear();
 
             }
