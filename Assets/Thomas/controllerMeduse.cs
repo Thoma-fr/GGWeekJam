@@ -5,6 +5,7 @@ using UnityEngine;
 public class controllerMeduse : MonoBehaviour
 {
     public Rigidbody2D rb;
+    
     public int speed;
     public bool canmove;
     void Start()

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class meduseray : MonoBehaviour
 {
+    public GameObject statue;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(other.gameObject, 0.5f);
+            GameObject newStatue= Instantiate(statue, other.gameObject.transform.position,other.gameObject.transform.rotation);
+            Destroy(other.gameObject);
         }
     }
 
