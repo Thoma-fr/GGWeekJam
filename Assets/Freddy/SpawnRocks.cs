@@ -12,7 +12,7 @@ public class SpawnRocks : MonoBehaviour
 
     private void Start()
     {
-        SpawnRockAtPosition();
+        StartCoroutine(StartLevel());
     }
 
     private void OnDrawGizmos()
@@ -33,6 +33,12 @@ public class SpawnRocks : MonoBehaviour
     {
         PlayerLeftRight.canCollide = false;
         yield return new WaitForSeconds(rate);
+        SpawnRockAtPosition();
+    }
+
+    private IEnumerator StartLevel()
+    {
+        yield return new WaitForSeconds(3f);
         SpawnRockAtPosition();
     }
 }

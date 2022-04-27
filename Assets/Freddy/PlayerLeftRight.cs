@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class PlayerLeftRight : MonoBehaviour
 {
-    public Rigidbody2D leftArmRb;
-    public Rigidbody2D rightArmRb;
+    private Rigidbody2D playerRgbd;
+    public GameObject pivotPoint;
+    private Animator playerAnim;
 
     public List<GameObject> soldiersList;
     public List<GameObject> soldiersList2;
@@ -22,15 +23,21 @@ public class PlayerLeftRight : MonoBehaviour
     private bool canHit = true;
     private bool isDead = false;
 
+    private void Start()
+    {
+        playerRgbd = GetComponent<Rigidbody2D>();
+        playerAnim = GetComponent<Animator>();
+    }
+
     // Update is called once per frame
     void Update()
     {
         Move();
+
         if (Input.GetKeyDown(KeyCode.E) && canHit)
         {
             canCollide = true;
-            leftArmRb.AddForce(punchPower, ForceMode2D.Impulse);
-            rightArmRb.AddForce(punchPower, ForceMode2D.Impulse);
+            playerAnim.SetTrigger("Rotate");
             StartCoroutine(ReloadHit());
         }
 
@@ -52,12 +59,15 @@ public class PlayerLeftRight : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Q))
         {
-            transform.position = new Vector3(transform.position.x - speedPlayer * 0.01f, transform.position.y, 0);
+            playerRgbd.velocity = Vector2.left * speedPlayer;
+            //transform.position = new Vector3(transform.position.x - speedPlayer * 0.01f, transform.position.y, 0);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position = new Vector3(transform.position.x + speedPlayer * 0.01f, transform.position.y, 0);
+            playerRgbd.velocity = Vector2.right * speedPlayer;
+
+            //transform.position = new Vector3(transform.position.x + speedPlayer * 0.01f, transform.position.y, 0);
         }
     }
 
