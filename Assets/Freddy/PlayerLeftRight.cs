@@ -12,6 +12,8 @@ public class PlayerLeftRight : MonoBehaviour
     public List<GameObject> soldiersList2;
     public List<GameObject> soldiersList3;
 
+    public List<GameObject> heartsList;
+
     public Vector2 punchPower;
 
     public float speedPlayer = 2f;

@@ -36,6 +36,10 @@ public class RockBehaviour : MonoBehaviour
                     Destroy(GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList[i]);
                 }
                 GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList.Clear();
+
+                GameObject.FindObjectOfType<PlayerLeftRight>().heartsList[2].SetActive(false);
+                GameObject.FindObjectOfType<PlayerLeftRight>().heartsList.RemoveAt(2);
+
             }
 
             else if (GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList.Count == 0 && GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList2.Count != 0)
@@ -45,6 +49,10 @@ public class RockBehaviour : MonoBehaviour
                     Destroy(GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList2[i]);
                 }
                 GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList2.Clear();
+
+                GameObject.FindObjectOfType<PlayerLeftRight>().heartsList[1].SetActive(false);
+                GameObject.FindObjectOfType<PlayerLeftRight>().heartsList.RemoveAt(1);
+
             }
 
             else if (GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList2.Count == 0 && GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList3.Count != 0)
@@ -54,6 +62,10 @@ public class RockBehaviour : MonoBehaviour
                     Destroy(GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList3[i]);
                 }
                 GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList3.Clear();
+
+                GameObject.FindObjectOfType<PlayerLeftRight>().heartsList[0].SetActive(false);
+                GameObject.FindObjectOfType<PlayerLeftRight>().heartsList.Clear();
+
             }
         }
     }
