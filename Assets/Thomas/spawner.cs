@@ -5,6 +5,7 @@ using UnityEngine;
 public class spawner : MonoBehaviour
 {
     public GameObject bullet;
+    public GameObject upBullet;
     public Transform spawnPoint1;
     public Transform spawnPoint2;
     // Start is called before the first frame update
@@ -28,7 +29,7 @@ public class spawner : MonoBehaviour
     public IEnumerator spawncourou2()
     {
         yield return new WaitForSeconds(Random.Range(5, 10));
-        GameObject newBullet = Instantiate(bullet,spawnPoint2.position, transform.rotation);
+        GameObject newBullet = Instantiate(upBullet, spawnPoint2.position, transform.rotation);
         StartCoroutine(spawncourou2());
     }
 }
