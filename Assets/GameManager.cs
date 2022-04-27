@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
-    private bool isPaused;
+    [SerializeField] AnimationCurve curve;
+    private bool isPaused = false;
+    private Animator animCurtains;
+
+    private void Start()
+    {
+        animCurtains = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -16,15 +24,17 @@ public class GameManager : MonoBehaviour
 
     private void Pause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+        if (Input.GetKeyDown(KeyCode.P) && !isPaused) // input to change on Escape
         {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
             isPaused = !isPaused;
+            animCurtains.SetTrigger("Close");
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
+        else if (Input.GetKeyDown(KeyCode.P) && isPaused)
         {
             Time.timeScale = 1;
             isPaused = !isPaused;
+            animCurtains.SetTrigger("Open");
         }
     }
 
