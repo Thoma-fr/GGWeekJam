@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 847983527380148461}
   m_Layer: 0
   m_Name: Rock
-  m_TagString: Untagged
+  m_TagString: Rock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,36 +137,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 30
-  soldiersList:
-  - {fileID: 211665933521349851, guid: 9376b10a212cc3c48990c31f8ea81563, type: 3}
-  - {fileID: 418732167081368560, guid: 77a2b9ceca8bb3849a235949f3add306, type: 3}
-  - {fileID: 2358266874406793780, guid: 4996964d38097d74fb30ecbb2a1fe4ce, type: 3}
-  - {fileID: 8172815180025663286, guid: efdec18c3c4662c4dbc9ba13a73f63d1, type: 3}
-  - {fileID: 7385401474660848695, guid: 8b07ac85aab52734e9f7126f28315660, type: 3}
-  - {fileID: 8131994324458956451, guid: 3be0a99bbbc5ba24d95a3e706b48d570, type: 3}
-  - {fileID: 3860299331574618125, guid: c510890ffaa4a2340b181c765118cf12, type: 3}
-  - {fileID: 6084206639072082798, guid: 83c51a887d2e2c04d87e1f28b3b8001f, type: 3}
-  - {fileID: 2035164224448313526, guid: 0867ff5a892f40d46b88e45d3b936787, type: 3}
-  - {fileID: 232706760386189311, guid: 77e04c1d5d0675c459aa080f488384c2, type: 3}
-  soldiersList2:
-  - {fileID: 8033501346104167036, guid: 81fe33a1922a4824dbe500fcb74508c2, type: 3}
-  - {fileID: 5077516510225857319, guid: 46d165cb3e402a540a5e614ef7ef0ab7, type: 3}
-  - {fileID: 3995755578596714257, guid: c0a3501f32145f94087d8ffcce0aceda, type: 3}
-  - {fileID: 6890924749251139053, guid: e611dbad1e03ec64ea7448d22ba69c30, type: 3}
-  - {fileID: 1337442764914109388, guid: f6a1b104e69627d4ca85590b4bc573e4, type: 3}
-  - {fileID: 6718711447133174225, guid: 81c42c720e5b13c4f8b90b620b65fb95, type: 3}
-  - {fileID: 1138146293933214342, guid: 317135fd11b58964b91847d3d9641fa7, type: 3}
-  - {fileID: 3875497470814236483, guid: 8ed2b2020a8aa4b418dfd29f796ea699, type: 3}
-  - {fileID: 2991285216490720839, guid: c1a9d40e79d5e0d49b584de004a1a131, type: 3}
-  - {fileID: 996690750667381074, guid: 23fdf95bef543424fa13e2a4c9b16a77, type: 3}
-  soldiersList3:
-  - {fileID: 1893065819915888814, guid: d367f1d8120905146a4a95cd73fbc26a, type: 3}
-  - {fileID: 5256882277138689017, guid: 23dcb564a01875e43b2727dc501c9700, type: 3}
-  - {fileID: 5116329906739315308, guid: e382f82dc1ebd4e4991514a024c332b5, type: 3}
-  - {fileID: 5390518583387423388, guid: 5791c7a0441a5b642bcbaca134f67194, type: 3}
-  - {fileID: 8799338665561262168, guid: af05853a8d3acde46914ea86a6ef59bf, type: 3}
-  - {fileID: 3214412225132605930, guid: 5ffd6c00a276afe4483baef683b16fa9, type: 3}
-  - {fileID: 2682821481887611569, guid: 5ef2317f9a4dc384491a6e546c18e1cb, type: 3}
-  - {fileID: 1284391092916214843, guid: 9a5f60c88bb61f04fa071ac6a0bfc44d, type: 3}
-  - {fileID: 8400581183885191488, guid: 8e3cbb5682b1de142be780fb4ee8679c, type: 3}
-  - {fileID: 8950558814360118802, guid: 6033024c6380d984fb69570349daaa11, type: 3}

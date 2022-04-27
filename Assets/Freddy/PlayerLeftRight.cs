@@ -32,6 +32,11 @@ public class PlayerLeftRight : MonoBehaviour
             rightArmRb.AddForce(punchPower, ForceMode2D.Impulse);
             StartCoroutine(ReloadHit());
         }
+
+        if(heartsList.Count == 0)
+        {
+            GameManager.Instance.GameOver();
+        }
     }
 
     private IEnumerator ReloadHit()

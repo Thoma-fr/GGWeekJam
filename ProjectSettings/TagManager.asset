@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - Soldier
   - Roof
+  - SpawnManager
+  - Rock
   layers:
   - Default
   - TransparentFX
