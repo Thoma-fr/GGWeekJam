@@ -70,8 +70,14 @@ public class GameManager : MonoBehaviour
 
         spawnManager.gameObject.SetActive(false);
         isPaused = !isPaused;
-        panelPause.SetActive(true);
+        StartCoroutine(MenuDisplay());
         animCurtains.SetTrigger("Close");
+    }
+
+    private IEnumerator MenuDisplay()
+    {
+        yield return new WaitForSeconds(2.6f);
+        panelPause.SetActive(true);
     }
 
     private IEnumerator WaitBeforeSpawningAgain()
