@@ -5,6 +5,11 @@ using UnityEngine;
 public class RockBehaviour : MonoBehaviour
 {
     public float power;
+    private GameObject castle;
+    private void Start()
+    {
+        castle = GameObject.FindGameObjectWithTag("Castle");
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {

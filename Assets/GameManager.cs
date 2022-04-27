@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     private bool isPaused = false;
     private bool canPause = true;
 
-    public GameObject panelGameOver;
     public GameObject panelPause;
     private List<GameObject> rocksSpawned = new List<GameObject>();
     public SpawnRocks spawnManager;
@@ -32,11 +31,9 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         animCurtains = GetComponent<Animator>();
-        panelGameOver.SetActive(false);
         panelPause.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(canPause)
@@ -70,8 +67,14 @@ public class GameManager : MonoBehaviour
 
         spawnManager.gameObject.SetActive(false);
         isPaused = !isPaused;
-        panelPause.SetActive(true);
+        StartCoroutine(MenuDisplay());
         animCurtains.SetTrigger("Close");
+    }
+
+    private IEnumerator MenuDisplay()
+    {
+        yield return new WaitForSeconds(2.6f);
+        panelPause.SetActive(true);
     }
 
     private IEnumerator WaitBeforeSpawningAgain()
@@ -83,7 +86,6 @@ public class GameManager : MonoBehaviour
     public void LoadScene(string scene)
     {
         SceneManager.LoadScene(scene);
-        panelGameOver.SetActive(false);
         canPause = true;
     }
 
@@ -96,7 +98,13 @@ public class GameManager : MonoBehaviour
     {
         canPause = false;
         animCurtains.SetTrigger("Close");
-        panelGameOver.SetActive(true);
+        StartCoroutine(RestartLevel());
+    }
+
+    private IEnumerator RestartLevel()
+    {
+        yield return new WaitForSeconds(4.0f);
+        LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ResumeGame()

@@ -10,6 +10,8 @@ TagManager:
   - Roof
   - SpawnManager
   - Rock
+  - Castle
+  - CastlePiece
   layers:
   - Default
   - TransparentFX

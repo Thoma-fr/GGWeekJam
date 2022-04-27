@@ -20,6 +20,7 @@ public class PlayerLeftRight : MonoBehaviour
 
     public static bool canCollide = false;
     private bool canHit = true;
+    private bool isDead = false;
 
     // Update is called once per frame
     void Update()
@@ -33,8 +34,9 @@ public class PlayerLeftRight : MonoBehaviour
             StartCoroutine(ReloadHit());
         }
 
-        if(heartsList.Count == 0)
+        if(heartsList.Count == 0 && !isDead)
         {
+            isDead = true;
             GameManager.Instance.GameOver();
         }
     }
