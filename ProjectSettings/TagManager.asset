@@ -12,6 +12,7 @@ TagManager:
   - Rock
   - Castle
   - CastlePiece
+  - Puppet
   layers:
   - Default
   - TransparentFX
