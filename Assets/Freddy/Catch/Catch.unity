@@ -1673,7 +1673,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerTxt: {fileID: 1191026817}
-  timer: 30
+  timer: 60
+  timerRunning: 1
 --- !u!4 &2088697105
 Transform:
   m_ObjectHideFlags: 0
