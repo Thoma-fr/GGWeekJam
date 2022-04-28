@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Freddy/Catch/Catch.unity
     guid: 682821fb08b97684b8960443331c6654
+  - enabled: 1
+    path: Assets/Thomas/cinematic/MeduseCinematic.unity
+    guid: 29be8c93ee8bc874584910122c9897e5
   m_configObjects: {}
