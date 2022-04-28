@@ -3,11 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-
+    public GameObject volumeBtn;
+    public ColorBlock color;
     public AudioMixer audioMixer;
+
+    private void Update()
+    {
+        if(EventSystem.current.currentSelectedGameObject == GameObject.FindGameObjectWithTag("SliderVolume"))
+        {
+            volumeBtn.GetComponent<Button>().colors = color;
+            volumeBtn.SetActive(true);
+        }
+        else
+        {
+            volumeBtn.SetActive(false);
+        }
+    }
 
     public void StartSceneByIndex(int p_index)
     {

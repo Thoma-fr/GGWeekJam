@@ -13,6 +13,7 @@ TagManager:
   - Castle
   - CastlePiece
   - Puppet
+  - SliderVolume
   layers:
   - Default
   - TransparentFX
