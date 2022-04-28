@@ -64,8 +64,13 @@ public class GameManager : MonoBehaviour
                 rocksSpawned[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             }
         }
+        if(spawnManager != null)
+            spawnManager.gameObject.SetActive(false);
 
-        spawnManager.gameObject.SetActive(false);
+        if (GameObject.FindObjectOfType<TimerManager>())
+        {
+            GameObject.FindObjectOfType<TimerManager>().timerRunning = false;
+        }
         isPaused = !isPaused;
         StartCoroutine(MenuDisplay());
         animCurtains.SetTrigger("Close");
@@ -118,8 +123,18 @@ public class GameManager : MonoBehaviour
             }
         }
         rocksSpawned.Clear();
-        spawnManager.gameObject.SetActive(true);
-        StartCoroutine(WaitBeforeSpawningAgain());
+
+        if(spawnManager != null)
+        {
+            spawnManager.gameObject.SetActive(true);
+            StartCoroutine(WaitBeforeSpawningAgain());
+        }
+
+        if (GameObject.FindObjectOfType<TimerManager>())
+        {
+            GameObject.FindObjectOfType<TimerManager>().timerRunning = true;
+        }
+        
         isPaused = !isPaused;
         panelPause.SetActive(false);
         animCurtains.SetTrigger("Open");
