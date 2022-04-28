@@ -13,6 +13,10 @@ public class PlayerLeftRight : MonoBehaviour
     public List<GameObject> soldiersList2;
     public List<GameObject> soldiersList3;
 
+    public GameObject baton1;
+    public GameObject baton2;
+    public GameObject baton3;
+
     public List<GameObject> heartsList;
 
     public Vector2 punchPower;
