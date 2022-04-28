@@ -42,7 +42,12 @@ public class WinningCastleSc : MonoBehaviour
                 castlePiece.Remove(castlePiece[0]);
                 RockBehaviour.canBeHurt = false;
                 winningTrigger.GetComponent<Collider2D>().isTrigger = true;
+                
             }
+        }
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(waitforEnd());
         }
     }
 }
