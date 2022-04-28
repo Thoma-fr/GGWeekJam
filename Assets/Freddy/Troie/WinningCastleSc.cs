@@ -19,7 +19,7 @@ public class WinningCastleSc : MonoBehaviour
 
         GameManager.Instance.animCurtains.SetTrigger("Close");
         yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene("Meduse");
+        SceneManager.LoadScene("MeduseCinematic");
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
