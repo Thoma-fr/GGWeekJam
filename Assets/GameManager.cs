@@ -10,9 +10,10 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     public bool istimed;
     public float timerBeforeend;
+    public string sceneName;
     public static GameManager Instance { get { return instance; } }
 
-    private Animator animCurtains;
+    public Animator animCurtains;
 
     private bool isPaused = false;
     private bool canPause = true;
@@ -43,6 +44,8 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(timerBeforeend);
         animCurtains.SetTrigger("Close");
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene(sceneName);
 
     }
     void Update()
@@ -92,7 +95,6 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2.6f);
         panelPause.SetActive(true);
     }
-
     private IEnumerator WaitBeforeSpawningAgain()
     {
         yield return new WaitForSeconds(4f);
