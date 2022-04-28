@@ -108,7 +108,7 @@ public class Movement : MonoBehaviour
 
     private void Victory()
     {
-        Debug.Log("Bravo!");
+        GameObject.FindObjectOfType<TimerManager>().timerRunning = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -126,12 +126,12 @@ public class Movement : MonoBehaviour
                         i++;
                     }
                 }
-                Debug.Log(i);
                 if(i + 1 == puppetsList.Count)
                 {
                     puppetsList.Clear();
                 }
                 puppetTaken = collision.gameObject;
+                puppetTaken.GetComponent<MovePuppets>().isMoving = false;
                 puppetTaken.transform.position = new Vector3(transform.position.x, transform.position.y - 1.2f, transform.position.z);
                 puppetTaken.transform.parent = transform;
                 comingUp = true;
