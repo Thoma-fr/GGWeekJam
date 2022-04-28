@@ -8,6 +8,8 @@ using System;
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
+    public bool istimed;
+    public float timerBeforeend;
     public static GameManager Instance { get { return instance; } }
 
     private Animator animCurtains;
@@ -32,8 +34,17 @@ public class GameManager : MonoBehaviour
     {
         animCurtains = GetComponent<Animator>();
         panelPause.SetActive(false);
+        if (istimed)
+        {
+            StartCoroutine(waitforEnd());
+        }
     }
+    private IEnumerator waitforEnd()
+    {
+        yield return new WaitForSeconds(timerBeforeend);
+        animCurtains.SetTrigger("Close");
 
+    }
     void Update()
     {
         if(canPause)
