@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Freddy/Troie/PriseDeTroie.unity
     guid: 12700964af0b99c44b8cf6440ade96d6
+  - enabled: 1
+    path: Assets/Freddy/Catch/Catch.unity
+    guid: 682821fb08b97684b8960443331c6654
   m_configObjects: {}
