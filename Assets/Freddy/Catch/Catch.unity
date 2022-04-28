@@ -917,6 +917,11 @@ Transform:
   m_Father: {fileID: 141242844}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &497478866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8061325876354242640, guid: f6956432e9858984f926ccacadd54ce0, type: 3}
+  m_PrefabInstance: {fileID: 1455732988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &639510926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2495,30 +2500,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: PanelPause
       objectReference: {fileID: 0}
-    - target: {fileID: 8061325874502141675, guid: f6956432e9858984f926ccacadd54ce0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 8061325874566685351, guid: f6956432e9858984f926ccacadd54ce0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8061325874566685351, guid: f6956432e9858984f926ccacadd54ce0, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061325874566685351, guid: f6956432e9858984f926ccacadd54ce0, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8061325876318297336, guid: f6956432e9858984f926ccacadd54ce0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1359377293}
-    - target: {fileID: 8061325876318297336, guid: f6956432e9858984f926ccacadd54ce0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
-      objectReference: {fileID: 0}
     - target: {fileID: 8061325876354242646, guid: f6956432e9858984f926ccacadd54ce0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1359377293}
-    - target: {fileID: 8061325876354242646, guid: f6956432e9858984f926ccacadd54ce0, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResumeGame
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6956432e9858984f926ccacadd54ce0, type: 3}
 --- !u!1 &1505845626
@@ -2735,7 +2736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 497478866}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1934294933

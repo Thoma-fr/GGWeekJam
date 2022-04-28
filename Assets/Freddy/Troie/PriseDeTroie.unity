@@ -212,6 +212,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2085303032465070074, guid: 1d1526097a09f034c849578331e317b0, type: 3}
   m_PrefabInstance: {fileID: 2085303032535124245}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &96634929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8061325876354242640, guid: f6956432e9858984f926ccacadd54ce0, type: 3}
+  m_PrefabInstance: {fileID: 8061325874357204962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &98314167
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,7 +1260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 96634929}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1050945013
@@ -3648,10 +3653,6 @@ PrefabInstance:
     - target: {fileID: 8061325874502141675, guid: f6956432e9858984f926ccacadd54ce0, type: 3}
       propertyPath: m_Name
       value: PanelPause
-      objectReference: {fileID: 0}
-    - target: {fileID: 8061325874566685351, guid: f6956432e9858984f926ccacadd54ce0, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8061325876318297336, guid: f6956432e9858984f926ccacadd54ce0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
