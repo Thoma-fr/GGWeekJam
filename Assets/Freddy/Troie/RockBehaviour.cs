@@ -6,8 +6,11 @@ public class RockBehaviour : MonoBehaviour
 {
     public float power;
     private GameObject castle;
+    
 
     public static bool canBeHurt = true;
+    public float speedDown = 2.0f;
+
     private void Start()
     {
         castle = GameObject.FindGameObjectWithTag("Castle");
@@ -40,10 +43,9 @@ public class RockBehaviour : MonoBehaviour
             {
                 if (GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList.Count != 0)
                 {
-                    for (int i = 0; i < GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList.Count; i++)
-                    {
-                        Destroy(GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList[i]);
-                    }
+                    GameObject.FindObjectOfType<PlayerLeftRight>().baton1.GetComponent<Animator>().SetTrigger("Death");
+
+
                     GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList.Clear();
 
                     GameObject.FindObjectOfType<PlayerLeftRight>().heartsList[2].GetComponent<Animator>().SetTrigger("Death");
@@ -53,10 +55,8 @@ public class RockBehaviour : MonoBehaviour
 
                 else if (GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList.Count == 0 && GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList2.Count != 0)
                 {
-                    for (int i = 0; i < GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList2.Count; i++)
-                    {
-                        Destroy(GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList2[i]);
-                    }
+                    GameObject.FindObjectOfType<PlayerLeftRight>().baton2.GetComponent<Animator>().SetTrigger("Death");
+
                     GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList2.Clear();
 
                     GameObject.FindObjectOfType<PlayerLeftRight>().heartsList[1].GetComponent<Animator>().SetTrigger("Death");
@@ -66,10 +66,8 @@ public class RockBehaviour : MonoBehaviour
 
                 else if (GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList2.Count == 0 && GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList3.Count != 0)
                 {
-                    for (int i = 0; i < GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList3.Count; i++)
-                    {
-                        Destroy(GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList3[i]);
-                    }
+                    GameObject.FindObjectOfType<PlayerLeftRight>().baton3.GetComponent<Animator>().SetTrigger("Death");
+
                     GameObject.FindObjectOfType<PlayerLeftRight>().soldiersList3.Clear();
 
                     GameObject.FindObjectOfType<PlayerLeftRight>().heartsList[0].GetComponent<Animator>().SetTrigger("Death");

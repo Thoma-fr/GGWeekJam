@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 7265711741380481925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.2877339, y: 1.1968445, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.31132078, g: 0.054334287, b: 0.054334287, a: 1}
+  m_Sprite: {fileID: 21300000, guid: d8fec414391dc3749b6592a411a90d6a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,9 +100,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.12, y: -0.12}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.97
 --- !u!50 &5583939905731109227
 Rigidbody2D:
   serializedVersion: 4
@@ -137,4 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 30
-  castlePiece: []
+  baton1: {fileID: 7910833334444536870, guid: 6d4489ce8937e5a43ac513cf6c44b9ea, type: 3}
+  baton2: {fileID: 2085303031370280541, guid: 1d1526097a09f034c849578331e317b0, type: 3}
+  baton3: {fileID: 3805628995204151749, guid: 15f2f2458a62b874788d48b867475fde, type: 3}
+  speedDown: 2
