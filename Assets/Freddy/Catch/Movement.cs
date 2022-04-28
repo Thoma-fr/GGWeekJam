@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     private Rigidbody2D playerRgbd;
+
+    private GameObject puppetTaken;
 
     private Vector2 previousUpPos;
 
@@ -14,6 +17,8 @@ public class Movement : MonoBehaviour
 
     private bool canMove = true;
     private bool comingUp = false;
+    private bool atHisMAxHeight = false;
+    private bool hasCollided = false;
 
     void Start()
     {
@@ -38,17 +43,48 @@ public class Movement : MonoBehaviour
 
         if (comingUp)
         {
-            playerRgbd.velocity = Vector2.up * downSpeed;
-            if (transform.position.y >= previousUpPos.y + 3f)
+            if(puppetTaken == null)
             {
-                playerRgbd.velocity = Vector2.down * downSpeed;// pb to fix -> going up and down cause comingup=true
-                if(transform.position.y <= previousUpPos.y)
+                playerRgbd.velocity = Vector2.up * downSpeed;
+                if (transform.position.y >= previousUpPos.y)
                 {
                     comingUp = false;
                     canMove = true;
+                    atHisMAxHeight = false;
+                }
+            } else
+            {
+                if (!atHisMAxHeight)
+                {
+                    playerRgbd.velocity = Vector2.up * downSpeed;
+                    if (transform.position.y >= previousUpPos.y + 3f)
+                    {
+                        StartCoroutine(GetRidOfPuppet());
+                        atHisMAxHeight = true;
+                    }
+                }
+                else
+                {
+                    playerRgbd.velocity = Vector2.down * downSpeed;
+                    if (transform.position.y <= previousUpPos.y)
+                    {
+                        comingUp = false;
+                        canMove = true;
+                        atHisMAxHeight = false;
+                    }
                 }
             }
         }
+    }
+
+    private IEnumerator GetRidOfPuppet()
+    {
+        puppetTaken.transform.parent = null;
+        puppetTaken.GetComponent<Rigidbody2D>().velocity = Vector2.up * downSpeed;
+        yield return new WaitForSeconds(2f);
+        Destroy(puppetTaken);
+        puppetTaken = null;
+        hasCollided = false;
     }
 
     private void Move()
@@ -63,13 +99,19 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Puppet"))
+        if (!hasCollided)
         {
-            collision.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y - 1.2f, transform.position.z);
-            collision.gameObject.transform.parent = transform;
-            comingUp = true;
+            if (collision.gameObject.CompareTag("Puppet"))
+            {
+                puppetTaken = collision.gameObject;
+                puppetTaken.transform.position = new Vector3(transform.position.x, transform.position.y - 1.2f, transform.position.z);
+                puppetTaken.transform.parent = transform;
+                comingUp = true;
+                hasCollided = true;
+            }
         }
+        
     }
 }
