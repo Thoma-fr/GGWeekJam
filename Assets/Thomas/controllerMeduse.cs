@@ -32,7 +32,7 @@ public class controllerMeduse : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.RightArrow) && canmove)
         {
             rb.AddForce(Vector2.up * 600);
-            rb.AddForce(Vector2.right * speed);
+            rb.AddForce(Vector2.right * (speed+100));
             canmove = false;
         }
     }
