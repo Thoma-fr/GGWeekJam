@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class WinningCastleSc : MonoBehaviour
 {
     private List<GameObject> castlePiece = new List<GameObject>();
@@ -12,6 +12,14 @@ public class WinningCastleSc : MonoBehaviour
     void Start()
     {
         castlePiece.AddRange(GameObject.FindGameObjectsWithTag("CastlePiece"));
+
+    }
+    private IEnumerator waitforEnd()
+    {
+
+        GameManager.Instance.animCurtains.SetTrigger("Close");
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene("Meduse");
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
