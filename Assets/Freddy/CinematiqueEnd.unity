@@ -567,6 +567,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 162836023640591314, guid: a630d42a84c1dc34c98716a6a014a464, type: 3}
+      propertyPath: istimed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 162836023640591314, guid: a630d42a84c1dc34c98716a6a014a464, type: 3}
+      propertyPath: sceneName
+      value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 162836023640591314, guid: a630d42a84c1dc34c98716a6a014a464, type: 3}
+      propertyPath: timerBeforeend
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 162836023640591315, guid: a630d42a84c1dc34c98716a6a014a464, type: 3}
       propertyPath: m_Name
       value: GameManager
