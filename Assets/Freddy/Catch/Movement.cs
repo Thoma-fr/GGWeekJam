@@ -36,7 +36,7 @@ public class Movement : MonoBehaviour
         if(canMove)
             Move();
 
-        if (Input.GetKey(KeyCode.E) && !comingUp)
+        if (Input.GetKey(KeyCode.S) && !comingUp)
         {
             canMove = false;
             animator.SetBool("catching", true);

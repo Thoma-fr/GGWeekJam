@@ -38,7 +38,7 @@ public class PlayerLeftRight : MonoBehaviour
     {
         Move();
 
-        if (Input.GetKeyDown(KeyCode.E) && canHit)
+        if (Input.GetKeyDown(KeyCode.Space) && canHit)
         {
             canCollide = true;
             playerAnim.SetTrigger("Rotate");

@@ -23,13 +23,13 @@ public class controllerMeduse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftArrow)&& canmove)
+        if(Input.GetKeyDown(KeyCode.Q)&& canmove)
         {
             rb.AddForce(Vector2.up * 600);
             rb.AddForce(Vector2.left * speed);
             canmove = false;
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && canmove)
+        else if (Input.GetKeyDown(KeyCode.D) && canmove)
         {
             rb.AddForce(Vector2.up * 600);
             rb.AddForce(Vector2.right * (speed+100));

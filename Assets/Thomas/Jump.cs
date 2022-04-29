@@ -17,13 +17,13 @@ public class Jump : MonoBehaviour
     }
     private void Update()
     {
-        if (jump || Input.GetKeyDown(KeyCode.UpArrow))
+        if (jump || Input.GetKeyDown(KeyCode.Z))
         {
             rb.AddForce(Vector2.up * jumpforce);
             jump = false;
 
         }
-        if (down || Input.GetKeyDown(KeyCode.DownArrow))
+        if (down || Input.GetKeyDown(KeyCode.S))
         {
             rb.AddForce(Vector2.up * -(jumpforce*2));
             down = false;
