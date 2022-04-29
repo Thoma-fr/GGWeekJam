@@ -799,13 +799,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 273361595098717476, guid: cbbdc7c5fbb5c334f95a5646855c79de, type: 3}
+      propertyPath: m_TagString
+      value: PNJ
+      objectReference: {fileID: 0}
     - target: {fileID: 1864622732849052972, guid: cbbdc7c5fbb5c334f95a5646855c79de, type: 3}
       propertyPath: m_Name
       value: player (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1864622732849052972, guid: cbbdc7c5fbb5c334f95a5646855c79de, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: PNJ
       objectReference: {fileID: 0}
     - target: {fileID: 2376598107944500389, guid: cbbdc7c5fbb5c334f95a5646855c79de, type: 3}
       propertyPath: m_LocalScale.x

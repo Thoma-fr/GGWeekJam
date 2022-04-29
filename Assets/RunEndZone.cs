@@ -22,6 +22,10 @@ public class RunEndZone : MonoBehaviour
         {
             StartCoroutine(waitForLoad());
         }
+        if (other.CompareTag("PNJ"))
+        {
+            GameManager.Instance.GameOver();
+        }
     }
     private IEnumerator waitForLoad()
     {

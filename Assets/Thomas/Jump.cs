@@ -43,6 +43,7 @@ public class Jump : MonoBehaviour
                 hearth2.GetComponent<Animator>().SetTrigger("Death");
                 Destroy(hearth2,3f) ; break;
             case 0:
+                GameManager.Instance.GameOver();
                 hearth3.GetComponent<Animator>().SetTrigger("Death");
                 Destroy(hearth3,3f ); break;
             default:
