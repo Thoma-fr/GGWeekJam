@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
     private GameObject puppetTaken;
 
     private Vector2 previousUpPos;
-
+    public Animator animator;
     public float playerSpeed = 2f;
     public float downSpeed = 5f;
     public float maxDistance = 5f;
@@ -26,6 +26,8 @@ public class Movement : MonoBehaviour
         playerRgbd = GetComponent<Rigidbody2D>();
         previousUpPos = transform.position;
         puppetsList.AddRange(GameObject.FindGameObjectsWithTag("Puppet"));
+        animator.GetComponent<Animator>();
+        animator.SetBool("catching", false);
     }
 
     void Update()
@@ -36,6 +38,7 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.E) && !comingUp)
         {
             canMove = false;
+            animator.SetBool("catching", true);
             playerRgbd.velocity = Vector2.down * downSpeed;
             if(transform.position.y <= -maxDistance)
             {
@@ -96,6 +99,7 @@ public class Movement : MonoBehaviour
 
     private void Move()
     {
+        animator.SetBool("catching",false);
         if (Input.GetKey(KeyCode.Q))
         {
             playerRgbd.velocity = Vector2.left * playerSpeed;
