@@ -440,6 +440,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1162137368}
+    - target: {fileID: 1696099241813441469, guid: 1bbfafdc00b6e7f46ac66b072d6f6022, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: cinematic0
+      objectReference: {fileID: 0}
     - target: {fileID: 1696099242420215530, guid: 1bbfafdc00b6e7f46ac66b072d6f6022, type: 3}
       propertyPath: m_Name
       value: MainMenu

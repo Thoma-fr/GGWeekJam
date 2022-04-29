@@ -847,7 +847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7434954871665961603, guid: cbbdc7c5fbb5c334f95a5646855c79de, type: 3}
       propertyPath: m_LinearDrag
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7434954871665961603, guid: cbbdc7c5fbb5c334f95a5646855c79de, type: 3}
       propertyPath: m_Constraints
