@@ -56,10 +56,10 @@ public class GameManager : MonoBehaviour
 
     private void Pause()
     {
-        if (Input.GetKeyDown(KeyCode.P) && !isPaused) // input to change on Escape
+        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused) // input to change on Escape
         {
             PauseGame();
-        } else if (Input.GetKeyDown(KeyCode.P) && isPaused)
+        } else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
         {
             ResumeGame();
         }
