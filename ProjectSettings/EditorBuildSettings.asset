@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Thomas/cinematic/MeduseCinematic.unity
     guid: 29be8c93ee8bc874584910122c9897e5
+  - enabled: 1
+    path: Assets/Freddy/CinematiqueEnd.unity
+    guid: 73d1c334e67e3d944821db8feaa80e95
   m_configObjects: {}

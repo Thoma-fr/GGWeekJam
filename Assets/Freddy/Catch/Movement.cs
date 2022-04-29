@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -113,6 +114,13 @@ public class Movement : MonoBehaviour
     private void Victory()
     {
         GameObject.FindObjectOfType<TimerManager>().timerRunning = false;
+        StartCoroutine(LoadCinematique());
+    }
+
+    private IEnumerator LoadCinematique()
+    {
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene("CinematiqueEnd");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
