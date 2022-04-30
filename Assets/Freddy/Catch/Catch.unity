@@ -496,7 +496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 19456582}
   playerSpeed: 12
-  downSpeed: 5
+  downSpeed: 8
   maxDistance: 5
 --- !u!61 &19456580
 BoxCollider2D:

@@ -1020,6 +1020,10 @@ PrefabInstance:
       value: MiniGameAct1 1
       objectReference: {fileID: 0}
     - target: {fileID: 162836023640591314, guid: a630d42a84c1dc34c98716a6a014a464, type: 3}
+      propertyPath: panelPause
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 162836023640591314, guid: a630d42a84c1dc34c98716a6a014a464, type: 3}
       propertyPath: timerBeforeend
       value: 45
       objectReference: {fileID: 0}

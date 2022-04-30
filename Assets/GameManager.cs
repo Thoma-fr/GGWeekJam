@@ -4,17 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
-    public bool istimed;
-    public float timerBeforeend;
-    public string sceneName;
+    
     public static GameManager Instance { get { return instance; } }
 
     public Animator animCurtains;
+    public GameObject canvasMainMenu;
 
+    public float timerBeforeend;
+    public string sceneName;
+
+    public bool istimed;
     private bool isPaused = false;
     private bool canPause = true;
 
@@ -34,24 +38,51 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         animCurtains = GetComponent<Animator>();
-        panelPause.SetActive(false);
+        if(panelPause != null)
+            panelPause.SetActive(false);
+
         if (istimed)
         {
             StartCoroutine(waitforEnd());
         }
+
+        if (canvasMainMenu != null)
+        {
+            //canvasMainMenu.SetActive(false);
+            StartCoroutine(OpenCurtainsMainMenu());
+        }
     }
+
+    private IEnumerator OpenCurtainsMainMenu()
+    {
+        animCurtains.SetTrigger("Open");
+        yield return new WaitForSeconds(4f);
+        canvasMainMenu.SetActive(true);
+    }
+
     private IEnumerator waitforEnd()
     {
         yield return new WaitForSeconds(timerBeforeend);
         animCurtains.SetTrigger("Close");
         yield return new WaitForSeconds(4f);
         SceneManager.LoadScene(sceneName);
+    }
 
+    private IEnumerator SkipCinematic()
+    {
+        animCurtains.SetTrigger("Close");
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene(sceneName);
     }
     void Update()
     {
-        if(canPause)
+        if(canPause && panelPause != null)
             Pause();
+
+        if(panelPause == null && Input.GetKeyDown(KeyCode.Escape))
+        {
+            StartCoroutine(SkipCinematic());
+        }
     }
 
     private void Pause()

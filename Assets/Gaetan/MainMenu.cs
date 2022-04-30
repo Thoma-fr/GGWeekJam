@@ -9,19 +9,20 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public GameObject volumeBtn;
-    public ColorBlock color;
     public AudioMixer audioMixer;
 
     private void Update()
     {
-        if(EventSystem.current.currentSelectedGameObject == GameObject.FindGameObjectWithTag("SliderVolume"))
+        if(volumeBtn != null)
         {
-            volumeBtn.GetComponent<Button>().colors = color;
-            volumeBtn.SetActive(true);
-        }
-        else
-        {
-            volumeBtn.SetActive(false);
+            if (EventSystem.current.currentSelectedGameObject == GameObject.FindGameObjectWithTag("SliderVolume"))
+            {
+                volumeBtn.SetActive(true);
+            }
+            else
+            {
+                volumeBtn.SetActive(false);
+            }
         }
     }
 
