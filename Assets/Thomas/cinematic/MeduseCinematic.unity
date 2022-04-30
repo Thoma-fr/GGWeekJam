@@ -4432,7 +4432,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 101
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4475,10 +4475,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81d7929b0319fa4aa99ffca7c55ee1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  istimed: 1
+  animCurtains: {fileID: 0}
+  canvasMainMenu: {fileID: 0}
   timerBeforeend: 19
   sceneName: Meduse
-  animCurtains: {fileID: 0}
+  istimed: 1
   panelPause: {fileID: 0}
   spawnManager: {fileID: 0}
 --- !u!1001 &3848761277584571245

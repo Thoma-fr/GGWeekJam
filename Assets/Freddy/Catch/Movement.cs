@@ -103,11 +103,24 @@ public class Movement : MonoBehaviour
         animator.SetBool("catching",false);
         if (Input.GetKey(KeyCode.Q))
         {
-            playerRgbd.velocity = Vector2.left * playerSpeed;
-        }
+            if(transform.position.x > -7)
+            {
+                playerRgbd.velocity = Vector2.left * playerSpeed;
+            } else
+            {
+                playerRgbd.velocity = Vector2.zero;
+            }
+        } 
         if (Input.GetKey(KeyCode.D))
         {
-            playerRgbd.velocity = Vector2.right * playerSpeed;
+            if (transform.position.x < 8)
+            {
+                playerRgbd.velocity = Vector2.right * playerSpeed;
+            }
+            else
+            {
+                playerRgbd.velocity = Vector2.zero;
+            }
         }
     }
 

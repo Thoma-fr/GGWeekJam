@@ -115,6 +115,7 @@ public class GameManager : MonoBehaviour
         if (GameObject.FindObjectOfType<TimerManager>())
         {
             GameObject.FindObjectOfType<TimerManager>().timerRunning = false;
+            GameObject.FindObjectOfType<TimerManager>().timerTxt.enabled = false;
         }
         isPaused = !isPaused;
         StartCoroutine(MenuDisplay());
@@ -177,8 +178,10 @@ public class GameManager : MonoBehaviour
         if (GameObject.FindObjectOfType<TimerManager>())
         {
             GameObject.FindObjectOfType<TimerManager>().timerRunning = true;
+            GameObject.FindObjectOfType<TimerManager>().timerTxt.enabled = true;
+
         }
-        
+
         isPaused = !isPaused;
         panelPause.SetActive(false);
         animCurtains.SetTrigger("Open");
