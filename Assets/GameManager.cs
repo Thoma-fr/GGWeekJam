@@ -9,13 +9,14 @@ using UnityEngine.EventSystems;
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
-    
     public static GameManager Instance { get { return instance; } }
 
     public Animator animCurtains;
     public GameObject canvasMainMenu;
+    private GameObject goToStock;
 
     public float timerBeforeend;
+    private float timeToReplace;
     public string sceneName;
 
     public bool istimed;
@@ -43,7 +44,7 @@ public class GameManager : MonoBehaviour
 
         if (istimed)
         {
-            StartCoroutine(waitforEnd());
+            StartCoroutine(waitforEnd(timerBeforeend));
         }
 
         if (canvasMainMenu != null)
@@ -60,9 +61,9 @@ public class GameManager : MonoBehaviour
         canvasMainMenu.SetActive(true);
     }
 
-    private IEnumerator waitforEnd()
+    private IEnumerator waitforEnd(float timer)
     {
-        yield return new WaitForSeconds(timerBeforeend);
+        yield return new WaitForSeconds(timer);
         animCurtains.SetTrigger("Close");
         yield return new WaitForSeconds(4f);
         SceneManager.LoadScene(sceneName);
@@ -76,6 +77,11 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
+        if (!isPaused)
+        {
+            timeToReplace += Time.deltaTime;
+        }
+
         if(canPause && panelPause != null)
             Pause();
 
@@ -99,6 +105,12 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         StopAllCoroutines();
+        if (GameObject.FindObjectOfType<Jump>())
+        {
+            goToStock = GameObject.FindObjectOfType<Jump>().gameObject.transform.parent.gameObject;
+            goToStock.SetActive(false);
+        }
+
         if (GameObject.FindGameObjectWithTag("Rock"))
         {
             rocksSpawned.AddRange(GameObject.FindGameObjectsWithTag("Rock"));
@@ -159,6 +171,14 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        if(sceneName == "cinematicminigame1")
+            StartCoroutine(waitforEnd(timerBeforeend - timeToReplace));
+
+        if (goToStock != null)
+        {
+            goToStock.SetActive(true); // can't find the gameobject cause it isn't active
+        }
+
         if (GameObject.FindGameObjectWithTag("Rock"))
         {
             for (int i = 0; i < rocksSpawned.Count; i++)
